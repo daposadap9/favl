@@ -4,6 +4,7 @@ import TransitionEffect from '../components/transition/TransitionEffect'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import '../pages/css/Login.css'
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 const Login = () => {
   return (
     <>
@@ -33,7 +34,7 @@ const Login = () => {
               <h1>Federacion Argentina de vuelo</h1>
               <p className='p-login'>¡Aqui amamos lo que hacemos!</p>
                 <div className="buttn">			
-                <a href="#" className="facebook"><FontAwesomeIcon icon={faFacebook} className='margin-left'></FontAwesomeIcon>Ingresar con facebook</a>
+                <a href="#" className="facebook"><FontAwesomeIcon icon={faUser} className='margin-left'></FontAwesomeIcon>Ingresar con facebook</a>
                 <a href="#"><FontAwesomeIcon icon={faTwitter} className='margin-left'></FontAwesomeIcon>Ingresar con twitter</a>
                 </div>
                 </div>

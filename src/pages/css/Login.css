@@ -82,24 +82,39 @@
   }
   
   .box-form .left .overlay .buttn {
-    margin-top: 13vh;
-  
+    margin-top: 13vh;  
   }
   
   .box-form .left .overlay .buttn a {
     background: #3b5998;
     color: white;
     margin-top: 10px;
-    padding: 10px 40px;
+    margin-bottom: 10px;
+    width: 35vh;
+    text-align: center;
+    padding: 10px 40px 10px;
+    transition: 0.3s;
     border-radius: 100px;
     display: inline-block;
     box-shadow: 0 3px 6px 1px #042d4657;
   }
+
+  .box-form .left .overlay .buttn a:hover {
+    color: white;
+    background: #4a6fbe;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 15px 45px 15px;
+    transition: 0.3s;
+  }
   
   .box-form .left .overlay .buttn a:last-child {
     background: #1dcaff;
-    margin-left: 0vw;
-    padding-left: 4vw;
+  }
+
+  .box-form .left .overlay .buttn a:last-child:hover {
+    background: #52d7ff;
+    text-shadow: 1px 1px 2px #009ece;
   }
   
   .box-form .right {
@@ -149,6 +164,13 @@
     border: none;
     outline: none;
     border-bottom: 2px solid #B0B3B9;
+    transition: 0.3s;
+  }
+
+  .box-form .right input:hover {
+    font-size: 2vh;
+    transition: 0.3s;
+    margin-top: 23px;
   }
   
   .box-form .right .remember-me--forget-password {
@@ -212,10 +234,20 @@
     outline: 0;
     box-shadow: 0px 4px 20px 0px #050608a6;
     background: navy;
+    position: relative;
+    transition: 0.3s;
   }
+
+  .box-form .right button:hover {
+    background: #1919e6;
+    border-color: #1919e6;
+    transition: 0.3s;
+  }
+
   .button-login a{
     color:white !important;
   }
+
   .colorear{
     color: red;
   }

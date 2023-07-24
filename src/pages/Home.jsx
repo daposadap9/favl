@@ -25,7 +25,6 @@ const Home = () => {
         </div>
         <div className="grid gap-3 mt-10">
           <p>
-            {" "}
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa
             laborum illum, voluptatem, eaque assumenda, autem alias quo quae
             molestiae ex quidem quasi. Deserunt eaque iste maxime quae eveniet

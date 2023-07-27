@@ -1,4 +1,3 @@
-import React from "react";
 import Nav from "./Nav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faRectangleXmark } from "@fortawesome/free-solid-svg-icons";

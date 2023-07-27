@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import TransitionEffect from "../components/transition/TransitionEffect";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers } from "@fortawesome/free-solid-svg-icons";
+import { faDeleteLeft, faEdit, faEye, faUsers } from "@fortawesome/free-solid-svg-icons";
 
 const Favl = () => {
   const [clubs, setclubs] = useState([]);
@@ -39,7 +39,7 @@ const Favl = () => {
         <h1 className="text-center text-3xl mt-20 text-blue-500 font-bold">
           Clubes
         </h1>
-        <div className="mt-7 text-center">
+        <div className="mt-7 text-center flex flex-wrap justify-center gap-1">
           <input
             type="text"
             className="border-rose-700 border-2 rounded-md p-1"
@@ -83,6 +83,20 @@ const Favl = () => {
                 </div>
                 <div className="p-2 bg-slate-200 flex justify-center font-bold border-b-2 border-b-slate-500 rounded-md shadow-lg text-blue-500">
                   <h1>{club.nombre_largo}</h1>
+                </div>
+                <div className="flex justify-around list-none font-bold p-2 bg-slate-300 rounded-md shadow-lg text-xl">
+                  <li><FontAwesomeIcon
+                      icon={faEdit}
+                      className="margin-left"
+                    ></FontAwesomeIcon></li>
+                    <li><FontAwesomeIcon
+                      icon={faEye}
+                      className="margin-left text-blue-500"
+                    ></FontAwesomeIcon></li>
+                    <li><FontAwesomeIcon
+                      icon={faDeleteLeft}
+                      className="margin-left text-red-500"
+                    ></FontAwesomeIcon></li>
                 </div>
               </div>
             ))}

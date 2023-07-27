@@ -23,9 +23,6 @@ const Login = () => {
       midDesktop:max-w-screen-midDesktop midDesktop:bg-transparent overflow-hidden
       mt-[699px]"
       >
-        <div>
-          <h1 className="text-3xl font-semibold">Login</h1>
-        </div>
         <div classname="bodyLogin">
           <div className="box-form">
             <div className="left">
@@ -61,12 +58,12 @@ const Login = () => {
               </p>
               <div className="inputs">
                 <input type="text" placeholder="Usuario" />
-                <br />
+                {/* <br /> */}
                 <input type="password" placeholder="Ingresa tu contraseña" />
               </div>
 
-              <br />
-              <br />
+              {/* <br />
+              <br /> */}
 
               <div className="remember-me--forget-password">
                 <label>
@@ -78,7 +75,7 @@ const Login = () => {
                 </p>
               </div>
 
-              <br />
+              {/* <br /> */}
               <button className="button-login">
                 <a href="#">ingresar</a>
               </button>

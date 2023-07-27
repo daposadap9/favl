@@ -30,7 +30,7 @@
     flex: 1 1 100%;
     align-items: stretch;
     justify-content: space-between;
-    box-shadow: 0 0 20px 6px #090b6f85;    
+    box-shadow: 0 0 20px 6px #090b6f85;
   }
   
   .a-login {
@@ -119,19 +119,19 @@
   }
   
   .box-form .right {
-    padding-left: 4vw;
     overflow: hidden;
-    width: 50vw;
     height: 100vh;
-    padding-right: 4vw;
     padding-top: 2vh;
     color: #333333;
     margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
   }
   
   @media (max-width: 980px) {
     .box-form .right {
-      width: 50vw;
+      width: 100%;
       height: 85vh;
     }
   }

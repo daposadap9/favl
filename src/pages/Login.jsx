@@ -20,8 +20,7 @@ const Login = () => {
       miniTablet:max-w-screen-miniTablet miniTablet:bg-transparent
       tablet:max-w-screen-tablet tablet:bg-transparent
       laptop:max-w-screen-laptop laptop:bg-transparent
-      midDesktop:max-w-screen-midDesktop midDesktop:bg-transparent overflow-hidden
-      mt-[699px]"
+      midDesktop:max-w-screen-midDesktop midDesktop:bg-transparent overflow-hidden"
       >
         <div classname="bodyLogin">
           <div className="box-form">

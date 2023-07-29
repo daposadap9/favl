@@ -3,7 +3,12 @@ import { motion } from "framer-motion";
 import TransitionEffect from "../components/transition/TransitionEffect";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDeleteLeft, faEdit, faEye, faUsers } from "@fortawesome/free-solid-svg-icons";
+import {
+  faDeleteLeft,
+  faEdit,
+  faEye,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Favl = () => {
   const [clubs, setclubs] = useState([]);
@@ -51,16 +56,14 @@ const Favl = () => {
         <div className="flex justify-evenly gap-10 mt-16">
           <div
             className="bg-slate-200 p-4 mt-1 rounded-md min-w-[100%] max-w-[100%] 
-          shadow-lg grid 
-          laptop:grid-cols-4 gap-2
-          miniTablet:grid-cols-2"
+          shadow-lg"
           >
             {clubs.map((club) => (
               <div
                 key={club.nombre}
-                className="mt-3 bg-slate-200 rounded-md flex justify-center max-w-[450px] flex-col gap-1 border-2 border-zinc-8S00 overflow-hidden px-5 py-2 shadow-lg"
+                className="mt-3 bg-slate-200 rounded-md grid grid-cols-5 items-center w-[100%] flex-row gap-1 border-2 border-zinc-8S00 overflow-hidden px-5 py-2 shadow-lg"
               >
-                <div className="p-2 bg-slate-200 flex justify-center font-bold border-b-2 border-b-slate-500 rounded-md shadow-lg">
+                <div className="p-2 w-[200px] bg-slate-200 flex justify-center items-center font-bold border-b-2 border-b-slate-500 rounded-md shadow-lg">
                   <h1>{club.nombre}</h1>
                   <div className="ml-2">
                     <FontAwesomeIcon
@@ -74,29 +77,35 @@ const Favl = () => {
                     <div>{club.logo}</div>
                   ) : (
                     <div className="flex justify-center">
-                      <img src="group.png" className="rounded-lg w-[200px]" />
+                      <img src="group.png" className="rounded-lg w-[60px]" />
                     </div>
                   )}
                 </div>
-                <div className="p-2 bg-slate-200 flex justify-center font-bold border-b-2 border-b-slate-500 rounded-md shadow-lg text-blue-500">
+                <div className="p-2 bg-slate-200 w-[200px] flex justify-center font-bold border-b-2 border-b-slate-500 rounded-md shadow-lg text-blue-500">
                   <h1>{club.nombre_largo}</h1>
                 </div>
-                <div className="p-2 bg-slate-200 flex justify-center font-bold border-b-2 border-b-slate-500 rounded-md shadow-lg text-blue-500">
+                <div className="p-2 w-[200px] bg-slate-200 flex justify-center font-bold border-b-2 border-b-slate-500 rounded-md shadow-lg text-blue-500">
                   <h1>{club.nombre_largo}</h1>
                 </div>
-                <div className="flex justify-around list-none font-bold p-2 bg-slate-300 rounded-md shadow-lg text-xl">
-                  <li><FontAwesomeIcon
+                <div className="flex w-[200px] justify-around items-center list-none font-bold p-2 bg-slate-300 rounded-md shadow-lg text-xl">
+                  <li>
+                    <FontAwesomeIcon
                       icon={faEdit}
                       className="margin-left"
-                    ></FontAwesomeIcon></li>
-                    <li><FontAwesomeIcon
+                    ></FontAwesomeIcon>
+                  </li>
+                  <li>
+                    <FontAwesomeIcon
                       icon={faEye}
                       className="margin-left text-blue-500"
-                    ></FontAwesomeIcon></li>
-                    <li><FontAwesomeIcon
+                    ></FontAwesomeIcon>
+                  </li>
+                  <li>
+                    <FontAwesomeIcon
                       icon={faDeleteLeft}
                       className="margin-left text-red-500"
-                    ></FontAwesomeIcon></li>
+                    ></FontAwesomeIcon>
+                  </li>
                 </div>
               </div>
             ))}

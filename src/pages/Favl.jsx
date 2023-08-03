@@ -24,6 +24,15 @@ const Favl = () => {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  function deleteClub(clubId) {
+    if (confirm("Presione Aceptar para eliminar el elemento"))
+      axios.delete('http://15.228.21.51:5000/club/' + clubId)
+      .then(()=> {
+        alert("El club ha sido eliminado")
+      })
+      .catch((err) => console.log(err));
+  }
   return (
     <>
       <TransitionEffect />
@@ -101,10 +110,12 @@ const Favl = () => {
                     ></FontAwesomeIcon>
                   </li>
                   <li>
-                    <FontAwesomeIcon
+                    <button onClick={deleteClub(club.id)}>
+                      <FontAwesomeIcon
                       icon={faDeleteLeft}
                       className="margin-left text-red-500"
-                    ></FontAwesomeIcon>
+                      ></FontAwesomeIcon>
+                    </button>
                   </li>
                 </div>
               </div>

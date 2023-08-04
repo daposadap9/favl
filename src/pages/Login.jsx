@@ -19,14 +19,10 @@ const Login = () => {
       midMobile:max-w-screen-midMobile midMobile:bg-transparent
       miniTablet:max-w-screen-miniTablet miniTablet:bg-transparent
       tablet:max-w-screen-tablet tablet:bg-transparent
-      laptop:max-w-screen-laptop laptop:bg-transparent 
-      midDesktop:max-w-screen-midDesktop midDesktop:bg-transparent overflow-hidden
-     mt-[699px]"
+      laptop:max-w-screen-laptop laptop:bg-transparent
+      midDesktop:max-w-screen-midDesktop midDesktop:bg-transparent overflow-hidden"
       >
-        <div>
-          <h1 className="text-3xl font-semibold">Login</h1>
-        </div>
-        <div className="bodyLogin">
+        <div classname="bodyLogin">
           <div className="box-form">
             <div className="left">
               <div className="background-left">
@@ -61,12 +57,17 @@ const Login = () => {
               </p>
               <div className="inputs">
                 <input type="text" placeholder="Usuario" />
-                <br />
+                {/* <br /> */}
                 <input type="password" placeholder="Ingresa tu contraseña" />
               </div>
 
+<<<<<<< HEAD
               <br />
               <br />
+=======
+              {/* <br />
+              <br /> */}
+>>>>>>> fc1d3c2c7225b04bad7428f91349a591d8f10eec
 
               <div className="remember-me--forget-password">
                 <label>
@@ -78,7 +79,11 @@ const Login = () => {
                 </p>
               </div>
 
+<<<<<<< HEAD
               <br />
+=======
+              {/* <br /> */}
+>>>>>>> fc1d3c2c7225b04bad7428f91349a591d8f10eec
               <button className="button-login">
                 <a href="#">ingresar</a>
               </button>

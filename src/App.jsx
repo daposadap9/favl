@@ -38,8 +38,7 @@ function App() {
         <Route path="/favl" element={<Favl />} />
         <Route path="/ingresar" element={<Login />} />
       </Routes>
-     </div>
-      
+     </div>      
     </>
   )
 }

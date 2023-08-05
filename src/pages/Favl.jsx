@@ -9,6 +9,7 @@ import {
   faEye,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
+import Map from "../components/mapas/Map";
 
 const Favl = () => {
   const [clubs, setclubs] = useState([]);
@@ -23,19 +24,25 @@ const Favl = () => {
         console.log(res.data);
       })
       .catch((err) => console.log(err));
-  }, [])
+  }, []);
 
   function deleteClub(clubId) {
     const BASE_URL = "http://15.228.21.51:5000/club/";
     const URL = BASE_URL;
-    if(confirm("¿Eliminar Club?"))
+    if (confirm("¿Eliminar Club?"))
       axios
-      .delete(URL + clubId)
-      .then(()=> {
-        alert("El club ha sido eliminado")
-      })
-      .catch((err) => console.log(err));
+        .delete(URL + clubId)
+        .then(() => {
+          alert(`El club ${clubId} ha sido eliminado`);
+        })
+        .catch((err) => console.log(err));
   }
+
+  const location = {
+    address: "1600 Amphitheatre Parkway, Mountain View, california.",
+    lat: 37.42216,
+    lng: -122.08427,
+  };
 
   return (
     <>
@@ -114,12 +121,12 @@ const Favl = () => {
                     ></FontAwesomeIcon>
                   </li>
                   <li>
-                      <button onClick={()=> deleteClub(club.id)}>
-                        <FontAwesomeIcon
+                    <button onClick={() => deleteClub(club.id)}>
+                      <FontAwesomeIcon
                         icon={faDeleteLeft}
                         className="margin-left text-red-500"
-                        ></FontAwesomeIcon>  
-                      </button>                                      
+                      ></FontAwesomeIcon>
+                    </button>
                   </li>
                 </div>
               </div>
@@ -127,6 +134,7 @@ const Favl = () => {
           </div>
         </div>
       </motion.div>
+      <Map location={location} zoomLevel={17} />
     </>
   );
 };

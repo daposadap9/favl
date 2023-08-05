@@ -61,13 +61,8 @@ const Login = () => {
                 <input type="password" placeholder="Ingresa tu contraseña" />
               </div>
 
-<<<<<<< HEAD
-              <br />
-              <br />
-=======
               {/* <br />
               <br /> */}
->>>>>>> fc1d3c2c7225b04bad7428f91349a591d8f10eec
 
               <div className="remember-me--forget-password">
                 <label>
@@ -79,11 +74,7 @@ const Login = () => {
                 </p>
               </div>
 
-<<<<<<< HEAD
-              <br />
-=======
               {/* <br /> */}
->>>>>>> fc1d3c2c7225b04bad7428f91349a591d8f10eec
               <button className="button-login">
                 <a href="#">ingresar</a>
               </button>

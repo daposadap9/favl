@@ -34,6 +34,7 @@ const Favl = () => {
         .delete(URL + clubId)
         .then(() => {
           alert(`El club ${clubId} ha sido eliminado`);
+          window.location.reload();
         })
         .catch((err) => console.log(err));
   }

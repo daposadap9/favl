@@ -2,10 +2,12 @@ import React from "react";
 import GoogleMapReact from "google-map-react";
 import LocationPin from "../Location/LocationPin";
 const Map = ({ location, zoomLevel }) => (
-  <div className="bg h-48 rounded-md">
-    <h2 className="map-h2">Come Visit Us At Our Campus</h2>
+  <div className="my-4 rounded-md">
+    <h1 className="map-h2 text-center font-bold text-blue-500 text-2xl">
+      Ubicacion de Clubes
+    </h1>
 
-    <div className="h-[500px] p-4 rounded-md">
+    <div className="h-[400px] p-4 rounded-md">
       <GoogleMapReact
         bootstrapURLKeys={{ key: "" }}
         defaultCenter={location}

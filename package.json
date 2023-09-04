@@ -24,6 +24,7 @@
     "emailjs": "^4.0.2",
     "framer-motion": "^10.12.16",
     "google-map-react": "^2.2.1",
+    "google-maps-react": "^2.0.6",
     "lottie-web": "^5.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

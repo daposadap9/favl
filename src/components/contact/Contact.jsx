@@ -87,7 +87,7 @@ const Contact = () => {
     >
       <section className="desktop:w-3/5 midDesktop:w-5/12">
         <div
-          className="rounded-2xl bg-blue-950 text-white overflow-hidden
+          className="rounded-2xl bg-blue-950 shadow-black shadow-xl text-white overflow-hidden
         midTablet:bg-blue-950
         midTablet:translate-x-[-30px]
         midTablet:z-[-10]
@@ -202,7 +202,7 @@ const Contact = () => {
         </div>
       </section>
       <section
-        className="bg bg-blue-950 text-white mt-10 mx-2 rounded-2xl p-5 shadow-xl shadow-slate-200
+        className="bg bg-blue-950 text-white mt-10 mx-2 rounded-2xl p-5 shadow-xl shadow-black
       tablet:h-2/4 z-[9] midtv:absolute midtv:mr-[1100px]"
       >
         <b>

@@ -94,6 +94,10 @@ function TablePaginationActions(props) {
 
 const Favl = () => {
   const [clubs, setclubs] = useState([]);
+  const [modalActive, setModalActive] = useState(false);
+  const handleActivateModal = () => {
+    setModalActive(!modalActive);
+  };
 
   TablePaginationActions.propTypes = {
     count: PropTypes.number.isRequired,
@@ -148,7 +152,7 @@ const Favl = () => {
     ),
     name2: (
       <div className="flex w-[200px] justify-around items-center mx-auto list-none font-bold p-2 bg-slate-300 rounded-md shadow-lg text-xl">
-        <li onClick={handleActivateModal}>
+        <li className="cursor-pointer" onClick={handleActivateModal}>
           <FontAwesomeIcon
             icon={faEdit}
             className="margin-left"
@@ -186,11 +190,6 @@ const Favl = () => {
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
-  };
-
-  const [modalActive, setModalActive] = useState(false);
-  var handleActivateModal = () => {
-    setModalActive(!modalActive);
   };
   const location = {
     address: "1600 Amphitheatre Parkway, Mountain View, california.",
@@ -236,98 +235,105 @@ const Favl = () => {
             Crear Clubes
           </button>
         </div>
-
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
-            <TableBody>
-              <TableRow style={{ backgroundColor: "#337CCF" }}>
-                <TableCell
-                  style={{ width: 160, height: 90, color: "white" }}
-                  align="center"
-                >
-                  Nombre
-                </TableCell>
-                <TableCell
-                  style={{ width: 160, color: "white" }}
-                  align="center"
-                >
-                  Nombre Largo
-                </TableCell>
-                <TableCell
-                  style={{ width: 160, color: "white" }}
-                  align="center"
-                >
-                  Ubicacion
-                </TableCell>
-                <TableCell
-                  style={{ width: 160, color: "white" }}
-                  align="center"
-                >
-                  Logo
-                </TableCell>
-                <TableCell
-                  style={{ width: 160, color: "white" }}
-                  align="center"
-                >
-                  Accion
-                </TableCell>
-              </TableRow>
-
-              {(rowsPerPage > 0
-                ? rows.slice(
-                    page * rowsPerPage,
-                    page * rowsPerPage + rowsPerPage
-                  )
-                : rows
-              ).map((row) => (
-                <>
-                  <TableRow key={row.name}>
-                    <TableCell style={{ width: 160 }} align="center">
-                      {row.name}
-                    </TableCell>
-                    <TableCell style={{ width: 160 }} align="center">
-                      {row.calories}
-                    </TableCell>
-                    <TableCell style={{ width: 160 }} align="center">
-                      {row.fat}
-                    </TableCell>
-                    <TableCell style={{ width: 160 }} align="center">
-                      {row.fay}
-                    </TableCell>
-                    <TableCell style={{ width: 160 }} align="center">
-                      {row.name2}
-                    </TableCell>
-                  </TableRow>
-                </>
-              ))}
-              {emptyRows > 0 && (
-                <TableRow style={{ height: 53 * emptyRows }}>
-                  <TableCell colSpan={6} />
+        <div className="shadow-slate-500 shadow-lg rounded-md">
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
+              <TableBody>
+                <TableRow style={{ backgroundColor: "#337CCF" }}>
+                  <TableCell
+                    style={{ width: 160, height: 90, color: "white" }}
+                    align="center"
+                  >
+                    Nombre
+                  </TableCell>
+                  <TableCell
+                    style={{ width: 160, color: "white" }}
+                    align="center"
+                  >
+                    Nombre Largo
+                  </TableCell>
+                  <TableCell
+                    style={{ width: 160, color: "white" }}
+                    align="center"
+                  >
+                    Ubicacion
+                  </TableCell>
+                  <TableCell
+                    style={{ width: 160, color: "white" }}
+                    align="center"
+                  >
+                    Logo
+                  </TableCell>
+                  <TableCell
+                    style={{ width: 160, color: "white" }}
+                    align="center"
+                  >
+                    Accion
+                  </TableCell>
                 </TableRow>
-              )}
-            </TableBody>
-            <TableFooter>
-              <TableRow>
-                <TablePagination
-                  rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
-                  colSpan={5}
-                  count={rows.length}
-                  rowsPerPage={rowsPerPage}
-                  page={page}
-                  SelectProps={{
-                    inputProps: {
-                      "aria-label": "Filas por página",
-                    },
-                    native: true,
-                  }}
-                  onPageChange={handleChangePage}
-                  onRowsPerPageChange={handleChangeRowsPerPage}
-                  ActionsComponent={TablePaginationActions}
-                />
-              </TableRow>
-            </TableFooter>
-          </Table>
-        </TableContainer>
+
+                {(rowsPerPage > 0
+                  ? rows.slice(
+                      page * rowsPerPage,
+                      page * rowsPerPage + rowsPerPage
+                    )
+                  : rows
+                ).map((row) => (
+                  <>
+                    <TableRow key={row.name}>
+                      <TableCell style={{ width: 160 }} align="center">
+                        {row.name}
+                      </TableCell>
+                      <TableCell style={{ width: 160 }} align="center">
+                        {row.calories}
+                      </TableCell>
+                      <TableCell style={{ width: 160 }} align="center">
+                        {row.fat}
+                      </TableCell>
+                      <TableCell style={{ width: 160 }} align="center">
+                        {row.fay}
+                      </TableCell>
+                      <TableCell style={{ width: 160 }} align="center">
+                        {row.name2}
+                      </TableCell>
+                    </TableRow>
+                  </>
+                ))}
+                {emptyRows > 0 && (
+                  <TableRow style={{ height: 53 * emptyRows }}>
+                    <TableCell colSpan={6} />
+                  </TableRow>
+                )}
+              </TableBody>
+              <TableFooter>
+                <TableRow>
+                  <TablePagination
+                    rowsPerPageOptions={[
+                      5,
+                      10,
+                      25,
+                      { label: "All", value: -1 },
+                    ]}
+                    colSpan={5}
+                    count={rows.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    SelectProps={{
+                      inputProps: {
+                        "aria-label": "Filas por página",
+                      },
+                      native: true,
+                    }}
+                    onPageChange={handleChangePage}
+                    onRowsPerPageChange={handleChangeRowsPerPage}
+                    ActionsComponent={TablePaginationActions}
+                  />
+                </TableRow>
+              </TableFooter>
+            </Table>
+          </TableContainer>
+        </div>
+
         {modalActive ? (
           <ModalForm
             modalActive={modalActive}

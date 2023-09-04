@@ -55,14 +55,14 @@ function TablePaginationActions(props) {
       <IconButton
         onClick={handleFirstPageButtonClick}
         disabled={page === 0}
-        aria-label="first page"
+        aria-label="Primera Pagina"
       >
         {theme.direction === "rtl" ? <LastPageIcon /> : <FirstPageIcon />}
       </IconButton>
       <IconButton
         onClick={handleBackButtonClick}
         disabled={page === 0}
-        aria-label="previous page"
+        aria-label="Pagina anterior"
       >
         {theme.direction === "rtl" ? (
           <KeyboardArrowRight />
@@ -73,7 +73,7 @@ function TablePaginationActions(props) {
       <IconButton
         onClick={handleNextButtonClick}
         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="next page"
+        aria-label="Siguiente pagina"
       >
         {theme.direction === "rtl" ? (
           <KeyboardArrowLeft />

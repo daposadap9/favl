@@ -28,6 +28,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Map from "../components/mapas/Map";
 import ModalForm from "../components/modals/ModalForm";
+import ModalDelete from "../components/modals/ModalDelete";
 
 //Data Tables
 function TablePaginationActions(props) {
@@ -94,6 +95,12 @@ function TablePaginationActions(props) {
 
 const Favl = () => {
   const [clubs, setclubs] = useState([]);
+
+  const [delModalActive, setDelModalActive] = useState(false);
+  const handleDelModalActive = () => {
+    setDelModalActive(!delModalActive);
+  };
+
   const [modalActive, setModalActive] = useState(false);
   const handleActivateModal = () => {
     setModalActive(!modalActive);
@@ -121,19 +128,6 @@ const Favl = () => {
   useEffect(() => {
     actualizarClubes();
   }, []);
-
-  function deleteClub(clubId) {
-    const BASE_URL = "http://15.228.21.51:5000/club/";
-    const URL = BASE_URL;
-    if (confirm("¿Eliminar Club?"))
-      axios
-        .delete(URL + clubId)
-        .then(() => {
-          alert(`El club ${clubId} ha sido eliminado`);
-          actualizarClubes();
-        })
-        .catch((err) => console.log(err));
-  }
 
   function createData(name, calories, fat, fay, name2) {
     return { name, calories, fat, fay, name2 };
@@ -164,8 +158,8 @@ const Favl = () => {
             className="margin-left text-blue-500"
           ></FontAwesomeIcon>
         </li>
-        <li>
-          <button onClick={() => deleteClub(club.id)}>
+        <li className="cursor-pointer" onClick={handleDelModalActive}>
+          <button>
             <FontAwesomeIcon
               icon={faDeleteLeft}
               className="margin-left text-red-500"
@@ -342,6 +336,16 @@ const Favl = () => {
         ) : (
           ""
         )}
+
+        {delModalActive ? (
+          <ModalDelete
+          modalActive={delModalActive}
+          setModalActive={setDelModalActive}
+          />
+        ) : (
+          ""
+        )}
+
         <div className="mt-2 mb-2">
           <Map location={location} zoomLevel={17} />
         </div>

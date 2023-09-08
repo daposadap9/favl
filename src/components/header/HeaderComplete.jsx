@@ -1,12 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Header from './Header';
-import HeaderMobile from './HeaderMobile';
-import UseActivate from '../../js/hooks/UseActivate';
+import Header from "./Header";
+import HeaderMobile from "./HeaderMobile";
+import UseActivate from "../../js/hooks/UseActivate";
 
-const HeaderComplete = ({width}) => {
+const HeaderComplete = ({ width }) => {
+  const { handleActive, isOpen, setisOpen } = UseActivate();
+  const [selectLanguage, setselectLanguage] = useState(true);
 
-  const {handleActive, isOpen, setisOpen} = UseActivate()
+  const handleChangeLanguage = () => {
+    setselectLanguage(!selectLanguage);
+  };
 
   useEffect(() => {
     if (width >= 734) {
@@ -16,19 +20,30 @@ const HeaderComplete = ({width}) => {
   }, [width, setisOpen]);
   return (
     <>
-    <motion.section 
-     initial={{opacity:0}}
-     animate={{opacity:1}}
-     transition={{ duration: 1}}
-     className="top-0 z-50 sticky">
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="top-0 z-50 sticky"
+      >
         {width >= 734 ? (
-          <Header />
+          <Header
+            handleChangeLanguage={handleChangeLanguage}
+            selectLanguage={selectLanguage}
+            setselectLanguage={setselectLanguage}
+          />
         ) : (
-          <HeaderMobile handleActive={handleActive} isOpen={isOpen} />
+          <HeaderMobile
+            handleChangeLanguage={handleChangeLanguage}
+            selectLanguage={selectLanguage}
+            setselectLanguage={setselectLanguage}
+            handleActive={handleActive}
+            isOpen={isOpen}
+          />
         )}
-    </motion.section>
+      </motion.section>
     </>
-  )
-}
+  );
+};
 
 export default HeaderComplete;

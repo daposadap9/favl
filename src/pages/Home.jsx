@@ -21,10 +21,11 @@ const Home = () => {
      mt-[699px]"
       >
         <div className="text-center">
-          <h1 className="text-3xl font-semibold mt-10">Pagina de inicio</h1>
+          <h1 className="text-3xl font-semibold mt-10">Pagina de Home</h1>
         </div>
         <div className="grid gap-3 mt-10">
           <p>
+            {" "}
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa
             laborum illum, voluptatem, eaque assumenda, autem alias quo quae
             molestiae ex quidem quasi. Deserunt eaque iste maxime quae eveniet
